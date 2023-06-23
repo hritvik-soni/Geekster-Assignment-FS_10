@@ -6,7 +6,7 @@ import com.hritvik.UserManagementSystem.repo.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 
@@ -31,7 +31,7 @@ public class UserService {
                 return "user removed for userID:" + userId;
             }
         }
-        return  userId + " not deleted as it doesn't exist" ;
+        return  "User"+ userId + " is not deleted as it doesn't exist" ;
     }
 
     public List<User> getAllUsers() {
@@ -57,7 +57,7 @@ public class UserService {
                 return user;
             }
         }
-        throw new IllegalStateException("User Id not found");
+        throw new IllegalStateException("UserId not found");
     }
 
 
