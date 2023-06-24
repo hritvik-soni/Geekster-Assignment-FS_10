@@ -1,6 +1,6 @@
 package com.hritvik.WeeklyTest.Objects;
 
-import org.springframework.stereotype.Component;
+// import org.springframework.stereotype.Component;
 
 
 public class Car {
