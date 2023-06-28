@@ -56,7 +56,7 @@ getInitializedList()
  List, ArrayList
 ```
 
-
+## Project Summary
 
 User management is a system to handle activities related to individuals' access to devices, software, and services
  
