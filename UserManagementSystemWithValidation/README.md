@@ -1,4 +1,3 @@
-
 # User Management System
 
 
@@ -12,31 +11,39 @@
 
 ## Data Flow
 
- 1. Controller
+ 1. Controller (RestroController.java)
 
 ```bash
-  UserControler.java
+  getAllUsers()
+  getUserByUserid
+  addUser()
+  DeleteUserById()
+  UpdateUser()
 ```
-2. Service
+2. Service  (UserService.java)
 
 ```bash
-  UserService.java
+ DeleteUser()
+ getAllUser()
+ createUser()
+ getUserById()
+ updateUserContact()
 ```
-
-3. Repository
+3. model  (Restaurant.java)
 
 ```bash
-  UserRepo.java
+ User()
 ```
-4. Model
+4. Repository  (RestroRepo.java)
 
 ```bash
-  User.java
+ getUsers()
+ delete()
 ```
-5. Configuration
+5. Configuration  (Beanmanager.java)
 
 ```bash
-  BeanManager.java
+getInitializedList()
 ```
 
 
@@ -45,22 +52,23 @@
 ## Data Structure Used
 
 ```bash
-  Lists
+ List, ArrayList
 ```
 
 
 
 ## Project Summary
 
-User management is a system to handle activities related to individuals' access to devices, software, and services
+Restaurant Model is a system to handle activities related to 'Restaurant' 
  
  #### Features
 
-- you can Add/Create users.
-- you can Get all user details.
-- you can Get specific user details by user id.
-- you can Update specific user details/Contact by user id.
-- you can Delete/Remove specific user details/Contact by user id.
+- you can Add/Create Restaurant.
+- you can Get all Restaurant details.
+- you can Get specific Restaurant details() by restro id.
+- you can Update specific Restaurant details/Contact by restro id.
+- you can Delete/Remove specific Restaurant details by restro id.
+
 ## Authors
 
 - [@hritvik-soni](https://www.github.com/hritvik-soni)
@@ -70,6 +78,11 @@ User management is a system to handle activities related to individuals' access 
 ## Support
 
 For support, email blah@blah.com or join our Slack channel.
+
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
 
 
 ## License
