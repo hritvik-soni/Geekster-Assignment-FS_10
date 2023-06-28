@@ -39,9 +39,10 @@ public class User {
     @Max(value = 30)
     private Integer userAge;
 
-
-//    private  LocalDate currDate = LocalDate.now();
-//    private  LocalTime currTime = LocalTime.now();
+    @NotNull
+    private  LocalDate currDate;  //= LocalDate.now();
+    @NotNull
+    private  LocalTime currTime;  //= LocalTime.now();
 
 
 
