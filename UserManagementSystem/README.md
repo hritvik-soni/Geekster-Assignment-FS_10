@@ -16,7 +16,7 @@
 
 ```bash
   getAllUsers()
-  getUserByUserid
+  getUserByUserid()
   addUser()
   DeleteUserById()
   UpdateUser()
