@@ -59,16 +59,16 @@ getInitializedList()
 
 ## Project Summary
 
-Restaurant Model is a system to handle activities related to 'Restaurant' 
+User management is a system to handle activities related to individuals' access to devices, software, and services
  
  #### Features
 
-- you can Add/Create Restaurant.
-- you can Get all Restaurant details.
-- you can Get specific Restaurant details() by restro id.
-- you can Update specific Restaurant details/Contact by restro id.
-- you can Delete/Remove specific Restaurant details by restro id.
-
+- you can Add/Create users.
+- you can Get all user details.
+- you can Get specific user details by user id.
+- you can Update specific user details/Contact by user id.
+- you can Delete/Remove specific user details/Contact by user id.
+  
 ## Authors
 
 - [@hritvik-soni](https://www.github.com/hritvik-soni)
