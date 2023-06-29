@@ -1,9 +1,6 @@
 package com.hritvik.HotelManagement.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,6 +18,7 @@ public class HotelRoom {
     @Column(unique = true)
     private Integer roomNumber;
 
+    @Enumerated(EnumType.STRING)
     private Type roomType;
     private Double roomPrice;
 

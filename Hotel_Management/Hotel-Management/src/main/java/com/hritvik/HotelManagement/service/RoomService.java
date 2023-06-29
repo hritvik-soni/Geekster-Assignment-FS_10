@@ -28,8 +28,9 @@ public class RoomService {
         return "Added";
     }
 
-    public Optional<HotelRoom> getAllRoomsById(Long roomId) {
-        return roomRepo.findById(roomId);
+    public HotelRoom getAllRoomsById(Long roomId) {
+        Optional<HotelRoom> optional= roomRepo.findById(roomId);
+        return optional.get();
     }
 
 

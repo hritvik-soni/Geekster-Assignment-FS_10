@@ -18,8 +18,12 @@ public class RoomController {
     @GetMapping("rooms")
     public Iterable<HotelRoom> getAllRooms()
     {
-
         return roomService.getAllRooms();
+    }
+    @GetMapping("rooms/search/{roomID}")
+    public HotelRoom getRoomById(@PathVariable Long roomId)
+    {
+        return roomService.getAllRoomsById(roomId);
     }
 
     @PostMapping("room")
@@ -31,15 +35,9 @@ public class RoomController {
     @PostMapping("rooms")
     public String addRooms(@RequestBody List<HotelRoom> room)
     {
-
         return roomService.addRooms(room);
     }
 
-    @GetMapping("rooms/search/{roomID}")
-    public Optional<HotelRoom> getRoomById(@PathVariable Long roomId)
-    {
 
-        return roomService.getAllRoomsById(roomId);
-    }
 
 }
