@@ -4,10 +4,11 @@ package com.hritvik.HotelManagement.controller;
 import com.hritvik.HotelManagement.model.HotelRoom;
 import com.hritvik.HotelManagement.service.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+
+import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class RoomController {
@@ -27,5 +28,18 @@ public class RoomController {
         return roomService.addRoom(room);
     }
 
+    @PostMapping("rooms")
+    public String addRooms(@RequestBody List<HotelRoom> room)
+    {
+
+        return roomService.addRooms(room);
+    }
+
+    @GetMapping("rooms/search/{roomID}")
+    public Optional<HotelRoom> getRoomById(@PathVariable Long roomId)
+    {
+
+        return roomService.getAllRoomsById(roomId);
+    }
 
 }
