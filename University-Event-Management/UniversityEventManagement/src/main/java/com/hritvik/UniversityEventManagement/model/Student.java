@@ -19,10 +19,8 @@ public class Student {
     @Id
     private Long studentId;
 
-
-   private String firstName;
-
-   private String lastName;
+    private String firstName;
+    private String lastName;
 
     @Min(value = 18)
     @Max(value = 25)
