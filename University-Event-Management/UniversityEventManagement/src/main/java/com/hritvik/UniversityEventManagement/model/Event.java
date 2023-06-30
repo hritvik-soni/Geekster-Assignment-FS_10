@@ -22,7 +22,9 @@ public class Event {
 
     @NotBlank(message = "name cannot be blank")
     private String userName;
+    @NotBlank(message = "name cannot be blank")
     private String eventName;
+    @NotBlank(message = "name cannot be blank")
     private String locationOfEvent;
 
     private LocalDate date;

@@ -40,7 +40,7 @@ public class EventService {
 
       }
 
-    public List<Event> getAllEventByDate(LocalDate date) {
+    public Iterable<Event> getAllEventByDate(LocalDate date) {
         List<Event> original = new List<Event>() {
             @Override
             public int size() {
@@ -175,4 +175,10 @@ public class EventService {
         }
         return original;
     }
+
+    public Iterable<Event> getAllEvents() {
+        return eventRepo.findAll();
+    }
+
+
 }
