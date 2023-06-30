@@ -6,10 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
+import java.util.*;
 
 @Service
 public class EventService {
@@ -32,8 +29,18 @@ public class EventService {
         return "Event Deleted";
     }
 
-    public List<Event> getEventByDate(LocalDate date) {
+    public Event getEventByDate(LocalDate date) {
 
+        for(Event event :eventRepo.findAll()){
+               if(event.getDate().isEqual(date)){
+                   return event;
+               }
+           }
+         return null;
+
+      }
+
+    public List<Event> getAllEventByDate(LocalDate date) {
         List<Event> original = new List<Event>() {
             @Override
             public int size() {
@@ -161,11 +168,11 @@ public class EventService {
             }
         };
 
-           for(Event event :eventRepo.findAll()){
-               if(event.getDate().equals(date)){
-                   original.add(event);
-               }
-           }
-           return original;
-      }
+        for(Event event :eventRepo.findAll()){
+            if(event.getDate().isEqual(date)){
+                original.add(event);
+            }
+        }
+        return original;
+    }
 }

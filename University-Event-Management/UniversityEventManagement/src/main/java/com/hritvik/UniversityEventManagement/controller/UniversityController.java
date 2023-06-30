@@ -6,9 +6,11 @@ import com.hritvik.UniversityEventManagement.service.EventService;
 import com.hritvik.UniversityEventManagement.service.StudentService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -83,9 +85,16 @@ public class UniversityController {
         return eventService.DeleteEvent(eventId);
     }
 
-    @GetMapping("event/search/{date}")
-    public List<Event> getEventByDate (@PathVariable LocalDate date){
+
+    @GetMapping("event/search")
+    public Event getEventByDate (@RequestParam("date") @DateTimeFormat(pattern ="yyyy-MM-dd") LocalDate date){
         return eventService.getEventByDate(date);
     }
+
+    @GetMapping("events/search")
+    public List<Event> getAllEventByDate (@RequestParam("date") @DateTimeFormat(pattern ="yyyy-MM-dd") LocalDate date){
+        return eventService.getAllEventByDate(date);
+    }
+
 
 }
