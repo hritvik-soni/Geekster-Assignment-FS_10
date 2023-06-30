@@ -13,9 +13,20 @@ public class RoomService {
 
     @Autowired
     IRoomRepo roomRepo;
+
+    /**
+     *
+     * @return
+     */
     public Iterable<HotelRoom> getAllRooms() {
         return roomRepo.findAll();
     }
+
+    /**
+     *
+     * @param room
+     * @return
+     */
 
     public String addRoom(HotelRoom room) {
         roomRepo.save(room);
@@ -23,13 +34,27 @@ public class RoomService {
 
     }
 
+    /**
+     *
+     * @param room
+     * @return
+     */
+
     public String addRooms(List<HotelRoom> room) {
         roomRepo.saveAll(room);
         return "Added";
     }
 
+    /**
+     *
+     * @param roomId
+     * @return
+     */
     public HotelRoom getAllRoomsById(Long roomId) {
         Optional<HotelRoom> optional= roomRepo.findById(roomId);
+        if(optional.isEmpty()){
+            return null;
+        }
         return optional.get();
     }
 

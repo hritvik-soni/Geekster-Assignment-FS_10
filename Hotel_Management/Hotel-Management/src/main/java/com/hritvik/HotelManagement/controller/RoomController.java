@@ -26,6 +26,7 @@ public class RoomController {
         return roomService.getAllRoomsById(roomId);
     }
 
+
     @PostMapping("room")
     public String addRoom(@RequestBody HotelRoom room)
     {
