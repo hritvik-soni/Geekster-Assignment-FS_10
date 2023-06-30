@@ -83,8 +83,8 @@ public class UniversityController {
         return eventService.DeleteEvent(eventId);
     }
 
-    @GetMapping("event/search/")
-    public List<Event> getEventByDate (@RequestParam LocalDate date){
+    @GetMapping("event/search/{date}")
+    public List<Event> getEventByDate (@PathVariable LocalDate date){
         return eventService.getEventByDate(date);
     }
 

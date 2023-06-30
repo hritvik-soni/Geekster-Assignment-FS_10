@@ -166,10 +166,6 @@ public class EventService {
                    original.add(event);
                }
            }
-
            return original;
-
-
-
-    }
+      }
 }
