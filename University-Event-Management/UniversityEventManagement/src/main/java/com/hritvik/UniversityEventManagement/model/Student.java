@@ -19,7 +19,9 @@ public class Student {
     @Id
     private Long studentId;
 
+    @Pattern(regexp =  "[A-Z][a-z]*")
     private String firstName;
+
     private String lastName;
 
     @Min(value = 18)
