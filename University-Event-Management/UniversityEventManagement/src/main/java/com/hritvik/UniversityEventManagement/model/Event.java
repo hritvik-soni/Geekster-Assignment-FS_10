@@ -21,13 +21,13 @@ public class Event {
     @Id
     private Long eventId;
 
-    @NotBlank(message = "name cannot be blank")
+    @NotBlank(message = "userName cannot be blank")
     private String userName;
 
-    @NotBlank(message = "name cannot be blank")
+    @NotBlank(message = "eventName cannot be blank")
     private String eventName;
 
-    @NotBlank(message = "name cannot be blank")
+    @NotBlank(message = "locationOfEvent cannot be blank")
     private String locationOfEvent;
 
     @NotNull
