@@ -1,5 +1,6 @@
 package com.hritvik.UniversityEventManagement.service;
 
+import com.hritvik.UniversityEventManagement.model.Department;
 import com.hritvik.UniversityEventManagement.model.Student;
 
 import com.hritvik.UniversityEventManagement.repository.IStudentRepo;
@@ -22,10 +23,10 @@ public class StudentService {
 
     public Student getStudentbyid(Long studentId) {
         Optional<Student> optional= studentRepo.findById(studentId);
-        if(optional.isEmpty()){
-            return null;
+        if(optional.isPresent()){
+            return optional.get();
         }
-        return optional.get();
+        return null;
     }
 
     public String addStudent(Student student) {
@@ -38,13 +39,34 @@ public class StudentService {
         return "Added";
     }
 
-    public String UpdateStudentDepartment(Student student) {
-        studentRepo.save(student);
-        return "Student Detail Updated";
+    public String UpdateStudentDepartment(Long studentId, Department department) {
+
+        if(studentRepo.existsById(studentId)){
+           Student student= getStudentbyid(studentId);
+           student.setDepartment(department);
+           studentRepo.save(student);
+            return "Student Updated";
+        }
+        else{
+            return "Student Id does not exist";
+        }
     }
 
+    /**
+     *
+     * @param studentId
+     * @return
+     */
     public String DeleteStudent(Long studentId) {
-        studentRepo.deleteById(studentId);
-        return"Student Deleted";
+
+        if(studentRepo.existsById(studentId)){
+            studentRepo.deleteById(studentId);
+            return "Student Deleted";
+        }
+        else{
+            return "Student Id does not exist";
+        }
+
+
     }
 }

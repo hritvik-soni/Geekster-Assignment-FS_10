@@ -1,5 +1,6 @@
 package com.hritvik.UniversityEventManagement.controller;
 
+import com.hritvik.UniversityEventManagement.model.Department;
 import com.hritvik.UniversityEventManagement.model.Event;
 import com.hritvik.UniversityEventManagement.model.Student;
 import com.hritvik.UniversityEventManagement.service.EventService;
@@ -46,11 +47,11 @@ public class UniversityController {
         return studentService.addStudents(student);
     }
 
-    @PutMapping("student")
+    @PutMapping("student/id/{studentId}/department/{department}")
 
-    public String UpdateStudentDepartment (@RequestBody @Valid Student student)
+    public String UpdateStudentDepartment (@PathVariable Long studentId, @PathVariable Department department)
     {
-        return studentService.UpdateStudentDepartment(student);
+        return studentService.UpdateStudentDepartment(studentId,department);
     }
     @DeleteMapping("student/{studentId}/delete/")
 
