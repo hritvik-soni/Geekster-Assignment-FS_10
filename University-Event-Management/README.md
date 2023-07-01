@@ -3,64 +3,85 @@
 ## Language and Framwork 
 
 ```bash
- Java and SpringBoot
+ Java , SpringBoot , JPA , H2 database
 ```
 
 ## Data Flow
 
- 1. Controller (RestroController.java)
+ 1. Controller (UniversityController.java)
 
 ```bash
-  getAllUsers()
-  getUserByUserid
-  addUser()
-  DeleteUserById()
-  UpdateUser()
+ #Apis for Student
+  getAllStudents()
+  getStudentByUserid
+  addStudentr()
+  DeleteStudentById()
+  UpdateStudentDepartment()
+
+ #Apis for Event
+  addEvent()
+  updateEvent()
+  deleteEvent()
+  getEventByDate()
+  getAllEvents()
 ```
-2. Service  (UserService.java)
+2. Service (StudentSerice.java , EventService.java )
 
 ```bash
- DeleteUser()
- getAllUser()
- createUser()
- getUserById()
- updateUserContact()
+ #Service for Student
+  getAllStudents()
+  getStudentByUserid
+  addStudentr()
+  DeleteStudentById()
+  UpdateStudentDepartment()
+
+ #Service for Event
+  addEvent()
+  updateEvent()
+  deleteEvent()
+  getEventByDate()
+  getAllEvents()
 ```
-3. model  (Restaurant.java)
+
+3. Model(Student.java , Department.java , Event.java )
 
 ```bash
- User()
+ Students()
+ Department()
+ Event()
 ```
-4. Repository  (RestroRepo.java)
+4. Repository
 
 ```bash
- getUsers()
- delete()
+ IStudentRepo()
+ IEventRepo()
 ```
-5. Configuration  (Beanmanager.java)
-
-```bash
-getInitializedList()
-```
-
 
 ## Data Structure Used
 
 ```bash
- List, ArrayList
+ H2 as database
 ```
 
 ## Project Summary
 
-User management is a system to handle activities related to individuals' access to devices, software, and services
+University Event Management is a system to handle activities related to individuals' access to devices, software, and services
  
- #### Features
+  #### Features for Students
 
-- you can Add/Create users.
-- you can Get all user details.
-- you can Get specific user details by user id.
-- you can Update specific user details/Contact by user id.
-- you can Delete/Remove specific user details/Contact by user id.
+- you can Add/Create Student.
+- you can Get all Student details.
+- you can Get specific Student details by Student id.
+- you can Update specific Student details/Contact by Student id.
+- you can Delete/Remove specific Student details/Contact by Student id.
+
+ #### Features for Events
+
+- you can Add/Create Event.
+- you can Get all Event details.
+- you can Get specific Event details by Event id.
+- you can Update specific Event details/Contact by Event id.
+- you can Delete/Remove specific Event details/Contact by Event id.
   
 ## Authors
 
@@ -77,8 +98,4 @@ For support, email blah@blah.com or join our Slack channel.
 
 [MIT](https://choosealicense.com/licenses/mit/)
 
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
 

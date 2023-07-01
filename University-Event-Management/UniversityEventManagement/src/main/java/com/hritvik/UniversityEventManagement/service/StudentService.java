@@ -2,7 +2,6 @@ package com.hritvik.UniversityEventManagement.service;
 
 import com.hritvik.UniversityEventManagement.model.Department;
 import com.hritvik.UniversityEventManagement.model.Student;
-
 import com.hritvik.UniversityEventManagement.repository.IStudentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,10 +15,20 @@ public class StudentService {
     @Autowired
     IStudentRepo studentRepo;
 
+    /**
+     *
+     * @return
+     */
     public Iterable<Student> getAllStudents() {
 
         return studentRepo.findAll();
     }
+
+    /**
+     *
+     * @param studentId
+     * @return
+     */
 
     public Student getStudentbyid(Long studentId) {
         Optional<Student> optional= studentRepo.findById(studentId);
@@ -29,16 +38,33 @@ public class StudentService {
         return null;
     }
 
+    /**
+     *
+     * @param student
+     * @return
+     */
     public String addStudent(Student student) {
         studentRepo.save(student);
         return "Added";
     }
+
+    /**
+     *
+     * @param student
+     * @return
+     */
 
     public String addStudents(List<Student> student) {
         studentRepo.saveAll(student);
         return "Added";
     }
 
+    /**
+     *
+     * @param studentId
+     * @param department
+     * @return
+     */
     public String UpdateStudentDepartment(Long studentId, Department department) {
 
         if(studentRepo.existsById(studentId)){

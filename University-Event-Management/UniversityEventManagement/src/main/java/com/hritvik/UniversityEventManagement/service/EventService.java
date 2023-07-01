@@ -1,7 +1,6 @@
 package com.hritvik.UniversityEventManagement.service;
 
 import com.hritvik.UniversityEventManagement.model.Event;
-import com.hritvik.UniversityEventManagement.model.Student;
 import com.hritvik.UniversityEventManagement.repository.IEventRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
