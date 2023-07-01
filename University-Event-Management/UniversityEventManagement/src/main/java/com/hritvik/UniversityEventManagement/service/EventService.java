@@ -1,6 +1,7 @@
 package com.hritvik.UniversityEventManagement.service;
 
 import com.hritvik.UniversityEventManagement.model.Event;
+import com.hritvik.UniversityEventManagement.model.Student;
 import com.hritvik.UniversityEventManagement.repository.IEventRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,14 +20,27 @@ public class EventService {
         return"Event Added";
     }
 
-    public String UpdateEvent(Event event) {
-        eventRepo.save(event);
-        return"Event Updated";
+    public String UpdateEvent(Long eventId , String location) {
+        if(eventRepo.existsById(eventId)){
+            Optional<Event> event = eventRepo.findById(eventId);
+            Event myevent= event.get();
+            myevent.setLocationOfEvent(location);
+            eventRepo.save(myevent);
+            return "Event Updated";
+        }
+        else{
+            return "Event Id does not exist";
+        }
     }
 
     public String DeleteEvent(Long eventId) {
-        eventRepo.deleteById(eventId);
-        return "Event Deleted";
+        if(eventRepo.existsById(eventId)){
+            eventRepo.deleteById(eventId);
+            return "Event Deleted";
+        }
+        else{
+            return "Event Id does not exist";
+        }
     }
 
 //    public Iterable<Event> getAllEventByDate(LocalDate date) {

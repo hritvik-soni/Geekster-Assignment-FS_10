@@ -47,9 +47,9 @@ public class UniversityController {
         return studentService.addStudents(student);
     }
 
-    @PutMapping("student/id/{studentId}/department/{department}")
+    @PutMapping("student")
 
-    public String UpdateStudentDepartment (@PathVariable Long studentId, @PathVariable Department department)
+    public String UpdateStudentDepartment (@RequestParam("id") Long studentId, @RequestParam("department") Department department)
     {
         return studentService.UpdateStudentDepartment(studentId,department);
     }
@@ -66,6 +66,7 @@ public class UniversityController {
 //Update event
 //Delete event
 //Get All events by date
+// getAll events
 
 
     @PostMapping("event")
@@ -75,9 +76,9 @@ public class UniversityController {
     }
 
     @PutMapping("event")
-    public String UpdateEvent (@RequestBody @Valid Event event)
+    public String UpdateEvent (@RequestParam("id") Long eventId , @RequestParam("location") String location)
     {
-        return eventService.UpdateEvent(event);
+        return eventService.UpdateEvent(eventId,location);
     }
 
     @DeleteMapping("event/{eventId}/delete")
