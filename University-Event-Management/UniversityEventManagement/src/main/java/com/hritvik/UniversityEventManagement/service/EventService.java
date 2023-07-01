@@ -29,27 +29,18 @@ public class EventService {
         return "Event Deleted";
     }
 
-    public Event getEventByDate(LocalDate date) {
-
-        for(Event event :eventRepo.findAll()){
-               if(event.getDate().isEqual(date)){
-                   return event;
-               }
-           }
-         return null;
-
-      }
+//    public Iterable<Event> getAllEventByDate(LocalDate date) {
+//        ArrayList<Event> original = new ArrayList<>();
+//        for(Event event :eventRepo.findAll()){
+//            if(event.getDate().isEqual(date)){
+//                original.add(event);
+//            }
+//        }
+//        return original;
+//    }
 
     public Iterable<Event> getAllEventByDate(LocalDate date) {
-
-        ArrayList<Event> original = new ArrayList<>();
-
-        for(Event event :eventRepo.findAll()){
-            if(event.getDate().isEqual(date)){
-                original.add(event);
-            }
-        }
-        return original;
+        return eventRepo.getAllEventByDate(date);
     }
 
     public Iterable<Event> getAllEvents() {

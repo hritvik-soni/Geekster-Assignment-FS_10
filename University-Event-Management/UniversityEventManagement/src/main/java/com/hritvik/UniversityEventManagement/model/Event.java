@@ -5,6 +5,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -25,6 +26,7 @@ public class Event {
     private String userName;
 
     @NotBlank(message = "eventName cannot be blank")
+    @Pattern(regexp =  "[A-Z][a-zA-Z0-9]*")
     private String eventName;
 
     @NotBlank(message = "locationOfEvent cannot be blank")

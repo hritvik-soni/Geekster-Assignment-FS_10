@@ -87,11 +87,6 @@ public class UniversityController {
     }
 
 
-    @GetMapping("event/search")
-    public Event getEventByDate (@RequestParam("date") @DateTimeFormat(pattern ="yyyy-MM-dd") LocalDate date){
-        return eventService.getEventByDate(date);
-    }
-
     @GetMapping("events/search")
     public Iterable<Event> getAllEventByDate (@RequestParam("date") @DateTimeFormat(pattern ="yyyy-MM-dd") LocalDate date){
         return eventService.getAllEventByDate(date);
