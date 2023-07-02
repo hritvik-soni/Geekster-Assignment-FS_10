@@ -50,7 +50,7 @@ public class JobService {
     public String updateJob(Long jobId, Double salary) {
 
         if(jobRepo.existsById(jobId)){
-            jobRepo.updateJobSalary(jobId,salary);
+            jobRepo.updateJobSalary(salary,jobId);
             return "Job Salary is Updated";
         }
         else{

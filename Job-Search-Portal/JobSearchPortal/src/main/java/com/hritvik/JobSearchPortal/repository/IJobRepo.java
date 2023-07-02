@@ -1,6 +1,7 @@
 package com.hritvik.JobSearchPortal.repository;
 
 import com.hritvik.JobSearchPortal.model.Job;
+import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -21,13 +22,17 @@ public interface IJobRepo extends CrudRepository<Job,Long> {
 
     // using Query for Update and delete
 
+    @Transactional
     @Modifying
-    @Query("delete from Job j where j.jobId=:id")
-    String deleteJob(@Param("id") Long jobId);
+    @Query("delete from Job where jobId=:jobId")
+   public void deleteJob(@Param("jobId") Long jobId);
 
+    @Transactional
     @Modifying
-    @Query("update Job j set j.salary = :salary where j.jobId= :id") //
-    String updateJobSalary(@Param("id") Long jobId, @Param("salary") Double salary);
+//    @Query(value = "update Job set salary = ? where jobId = ?", nativeQuery = true)
+    @Query("update Job set salary = :salary where jobId = :jobId")
+    public void updateJobSalary( @Param("salary") Double salary,@Param("jobId") Long jobId);
+
 
 
 }

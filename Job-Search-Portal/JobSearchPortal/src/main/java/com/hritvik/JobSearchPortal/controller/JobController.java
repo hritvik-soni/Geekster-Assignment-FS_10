@@ -49,7 +49,7 @@ public class JobController {
     // Custom Query for Update and Delete Apis
 
     @PutMapping("job/update/of")
-    public String updateJob (@Valid @RequestParam("id") Long jobId ,@RequestParam Double salary){
+    public String updateJob ( @RequestParam("id") Long jobId ,@RequestParam("salary") Double salary){
         return jobService.updateJob(jobId,salary);
     }
 
