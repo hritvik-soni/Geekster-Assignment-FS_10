@@ -37,10 +37,10 @@ public class Job {
     @Email
     private String companyEmail;
 
-    @Pattern(regexp = "[A-Z][a-zA-z0-9]*")
+    @Pattern(regexp = "[A-Z][a-zA-z0-9 ]*")
     private String companyName;
 
-    @Pattern(regexp = "[A-Z][a-zA-z0-9]*")
+    @Pattern(regexp = "[A-Z][a-zA-z0-9 ]*")
     private String employerName;
 
     @Enumerated(EnumType.STRING)

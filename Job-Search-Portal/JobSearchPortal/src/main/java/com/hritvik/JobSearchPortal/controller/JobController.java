@@ -41,6 +41,11 @@ public class JobController {
         return jobService.getJobsByDescription(description);
     }
 
+    @GetMapping("jobs/search/on")
+    public Iterable<Job> getJobsByLocation (@RequestParam("location") String location){
+        return jobService.getJobsByLocation(location);
+    }
+
     // Custom Query for Update and Delete Apis
 
     @PutMapping("job/update/of")

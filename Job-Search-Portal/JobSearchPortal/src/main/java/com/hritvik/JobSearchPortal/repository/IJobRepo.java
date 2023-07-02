@@ -16,6 +16,8 @@ public interface IJobRepo extends CrudRepository<Job,Long> {
 
     Iterable<Job> getJobsByDescription(String description); //Custom finder for Get Jobs By Description
 
+    Iterable<Job> getJobsByLocation(String location); //Custom finder for Get Jobs By Location
+
 
     // using Query for Update and delete
 
@@ -26,5 +28,6 @@ public interface IJobRepo extends CrudRepository<Job,Long> {
     @Modifying
     @Query("update Job j set j.salary = :salary where j.jobId= :id") //
     String updateJobSalary(@Param("id") Long jobId, @Param("salary") Double salary);
+
 
 }

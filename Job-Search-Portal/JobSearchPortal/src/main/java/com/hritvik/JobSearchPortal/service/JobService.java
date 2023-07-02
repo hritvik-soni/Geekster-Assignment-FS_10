@@ -41,6 +41,10 @@ public class JobService {
         return jobRepo.getJobsByDescription(description);
     }
 
+    public Iterable<Job> getJobsByLocation(String location) {
+        return jobRepo.getJobsByLocation(location);
+    }
+
     // Custom Query for Update and Delete Apis
 
     public String updateJob(Long jobId, Double salary) {
@@ -63,4 +67,6 @@ public class JobService {
             return "Job Id does not exist";
         }
     }
+
+
 }
