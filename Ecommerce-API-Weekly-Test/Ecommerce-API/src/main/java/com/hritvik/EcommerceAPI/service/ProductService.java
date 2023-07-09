@@ -20,10 +20,10 @@ public class ProductService {
         return productRepo.findAll();
     }
 
-//    public Iterable<Product> getAllProductbyCategory(Category category) {
-//
-//        return productRepo.getAllProductOrderByCategory(category);
-//    }
+    public Iterable<Product> getAllProductbyCategory(String category) {
+
+        return productRepo.getAllProductbyCategory(category);
+    }
 
     public String addProduct(Product product) {
         productRepo.save(product );

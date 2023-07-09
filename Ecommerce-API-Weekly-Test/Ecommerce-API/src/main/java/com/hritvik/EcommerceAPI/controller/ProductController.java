@@ -22,11 +22,11 @@ public class ProductController {
     }
 
 
-//    @GetMapping("productwithcategory")
-//    public Iterable<Product> getProductbyCategory(@RequestParam("category")Category category)
-//    {
-//        return productService.getAllProductbyCategory(category);
-//    }
+    @GetMapping("productwithcategory")
+    public Iterable<Product> getProductbyCategory(@RequestParam("category") String category)
+    {
+        return productService.getAllProductbyCategory(category);
+    }
 
     @PostMapping("product")
     public String addProduct(@RequestBody @Valid Product product)

@@ -11,6 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Table(name="orders")
 public class Order {
 
     @Id
@@ -22,7 +23,7 @@ public class Order {
     private User user;
 
     @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "fk_order_product_table",joinColumns =@JoinColumn(name="fk_order_id"),inverseJoinColumns= @JoinColumn(name ="fk_product_id"))
+    @JoinTable(name = "fk_order_product_table",joinColumns =@JoinColumn(name="fk_order_id"),inverseJoinColumns = @JoinColumn(name ="fk_product_id"))
     private List<Product> product;
 
     @ManyToOne (cascade = CascadeType.ALL)
