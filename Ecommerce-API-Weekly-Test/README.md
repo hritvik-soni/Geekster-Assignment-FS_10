@@ -1,4 +1,4 @@
-# Employee Address
+# E-Commerse APi
 
 ## Language and Framwork 
 
@@ -15,45 +15,69 @@
   getAllAddress()
   getAddressByUserid
   addAddress()
-  DeleteAddressById()
-  UpdateAddress()
+  
 
- #Apis for Event (EmployeeController)
-  addEmployee()
-  updateEmployee()
-  deleteEmployee()
-  getEmployeebyId()
-  getAllEmployee()
+ #Apis for Order (OrderController)
+  addOrder()
+  getOrderbyId()
+  getAllOrder()
+
+#Apis for Product (ProductController)
+  addProduct()
+  getProductbyCategory()
+  getAllProduct()
+  deleteProduct()
+
+
+#Apis for User (UserController)
+  addUser()
+  getUserbyId()
+  getAllUser()
+
 ```
-2. Service (StudentSerice.java , EventService.java )
+2. Service 
 
 ```bash
- #Service for Address (AddressController)
+ #Service for Address (AddressService)
   getAllAddress()
   getAddressByUserid
   addAddress()
-  DeleteAddressById()
-  UpdateAddress()
+  
 
- #Service for Event (EmployeeController)
-  addEmployee()
-  updateEmployee()
-  deleteEmployee()
-  getEmployeebyId()
-  getAllEmployee()
+ #Service for Order (OrderService)
+  addOrder()
+  getOrderbyId()
+  getAllOrder()
+
+#Service for Product (ProductService)
+  addProduct()
+  getProductbyCategory()
+  getAllProduct()
+  deleteProduct()
+
+
+#Service for User (UserService)
+  addUser()
+  getUserbyId()
+  getAllUser()
+
 ```
 
 3. Model
 
 ```bash
  Address()
- Employee()
+ Order()
+ Product()
+ User()
 ```
 4. Repository
 
 ```bash
  IAddressRepo()
- IEmployeeRepo()
+ IOrderRepo()
+ IProductRepo()
+ IuserRepo()
 ```
 
 ## Data Structure Used
@@ -64,23 +88,20 @@
 
 ## Project Summary
 
-Employee Address is a system to handle activities related to Employee and Address and services
+E-Commerse APi is a system to handle activities related to E-commerse and services
  
   #### Features for Employee
 
-- you can Add/Create Employee.
-- you can Get all Employee details.
-- you can Get specific Employee details by Employee id.
-- you can Update specific Employee details/Contact by Employee id.
-- you can Delete/Remove specific Employee details/Contact by Employee id.
-
- #### Features for Address
-
+- you can Add/Create User.
 - you can Add/Create Address.
-- you can Get all Address details.
-- you can Get specific Address details by Address id.
-- you can Update specific Address details/Contact by Address id.
-- you can Delete/Remove specific Address details/Contact by Address id.
+- you can Add/Create Product.
+- you can Add/Create Order.
+- you can Get all User details.
+- you can Get specific Product details by category.
+-  you can Get specific Order details by Order Id.
+- you can Delete/Remove specific Product details by Product id.
+
+
   
 ## Authors
 
