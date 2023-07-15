@@ -1,4 +1,4 @@
-# E-Commerse APi
+# Mapping Practice Assignment
 
 ## Language and Framwork 
 
@@ -13,53 +13,71 @@
 ```bash
  #Apis for Address (AddressController)
   getAllAddress()
-  getAddressByUserid
   addAddress()
+  updateAddressState()
+  deleteAddress()
   
 
- #Apis for Order (OrderController)
-  addOrder()
-  getOrderbyId()
-  getAllOrder()
+ #Apis for Book (BookController)
+  getAllBook()
+  addBook()
+  updateBookPrice()
+  deleteBook()
 
-#Apis for Product (ProductController)
-  addProduct()
-  getProductbyCategory()
-  getAllProduct()
-  deleteProduct()
+#Apis for Course (CourseController)
+  getAllCourse()
+  addCourse()
+  updateCourse()
+  deleteCourse()
 
 
-#Apis for User (UserController)
-  addUser()
-  getUserbyId()
-  getAllUser()
+#Apis for Laptop (LaptopController)
+  getAllLaptop()
+  addLaptop()
+  updateLaptop()
+  deleteLaptop()
+
+#Apis for Student (StudentController)
+  getAllStudent()
+  addStudent()
+  updateStudent()
+  deleteStudent()
 
 ```
 2. Service 
 
 ```bash
- #Service for Address (AddressService)
+ #Service for Address 
   getAllAddress()
-  getAddressByUserid
   addAddress()
+  updateAddressState()
+  deleteAddress()
   
 
- #Service for Order (OrderService)
-  addOrder()
-  getOrderbyId()
-  getAllOrder()
+ #Service for Book 
+  getAllBook()
+  addBook()
+  updateBookPrice()
+  deleteBook()
 
-#Service for Product (ProductService)
-  addProduct()
-  getProductbyCategory()
-  getAllProduct()
-  deleteProduct()
+#Service for Course 
+  getAllCourse()
+  addCourse()
+  updateCourse()
+  deleteCourse()
 
 
-#Service for User (UserService)
-  addUser()
-  getUserbyId()
-  getAllUser()
+#Service for Laptop 
+  getAllLaptop()
+  addLaptop()
+  updateLaptop()
+  deleteLaptop()
+
+#Service for Student 
+  getAllStudent()
+  addStudent()
+  updateStudent()
+  deleteStudent()
 
 ```
 
@@ -67,17 +85,19 @@
 
 ```bash
  Address()
- Order()
- Product()
- User()
+ Book()
+Course()
+Laptop()
+Student()
 ```
 4. Repository
 
 ```bash
  IAddressRepo()
- IOrderRepo()
- IProductRepo()
- IuserRepo()
+ IBookRepo()
+ ICourseRepo()
+ ILaptopRepo()
+ IStudentRepo()
 ```
 
 ## Data Structure Used
@@ -88,18 +108,14 @@
 
 ## Project Summary
 
-E-Commerse APi is a system to handle activities related to E-commerse and services
+Mapping Practice is a Assignment to practice mapping in sprintboot.
  
   #### Features for Employee
 
-- you can Add/Create User.
-- you can Add/Create Address.
-- you can Add/Create Product.
-- you can Add/Create Order.
-- you can Get all User details.
-- you can Get specific Product details by category.
--  you can Get specific Order details by Order Id.
-- you can Delete/Remove specific Product details by Product id.
+- you can Add/Create Address , Book , Course , Laptop and Student.
+- you can Get all Address , Book , Course , Laptop and Student details.
+- you can Delete/Remove specific Address , Book , Course , Laptop and Student details.
+- you can Update specific Address , Book , Course , Laptop and Student details.
 
 
   
