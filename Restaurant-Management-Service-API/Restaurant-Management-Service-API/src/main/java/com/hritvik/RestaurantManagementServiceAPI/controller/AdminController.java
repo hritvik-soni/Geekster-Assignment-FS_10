@@ -25,7 +25,7 @@ public class AdminController {
         return adminService.getAllUser();
     }
 
-    @PostMapping()
+
 
 }
 
