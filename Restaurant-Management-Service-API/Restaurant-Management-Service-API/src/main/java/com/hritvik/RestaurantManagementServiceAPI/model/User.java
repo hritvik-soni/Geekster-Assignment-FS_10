@@ -1,6 +1,9 @@
 package com.hritvik.RestaurantManagementServiceAPI.model;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
+import jakarta.persistence.criteria.Order;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,4 +13,23 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long userId;
+    private String userName;
+
+    @Pattern(regexp = "^.+@(?![Hh][Oo][Ss][Pp][Aa][Dd][Mm][Ii][Nn]\\.[Cc][Oo][Mm]$).+$")
+    @Column(unique = true)
+    private String userEmail;
+    @NotBlank
+    private String userPassword;
+
+    private Integer userAge;
+
+    private String userAddress;
+
+
+    @OneToOne(mappedBy = "user")
+    Order order;
 }
