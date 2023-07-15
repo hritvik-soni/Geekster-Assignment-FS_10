@@ -1,4 +1,4 @@
-# Mapping Practice Assignment
+# Restaurant Management Service API
 
 ## Language and Framwork 
 
@@ -11,93 +11,67 @@
  1. Controller 
 
 ```bash
- #Apis for Address (AddressController)
-  getAllAddress()
-  addAddress()
-  updateAddressState()
-  deleteAddress()
-  
+ #Apis for Admin (AdminController)
+  getAllUsers()
+  getAllOrders()
+  getAllFoodItems()
+ 
 
- #Apis for Book (BookController)
-  getAllBook()
-  addBook()
-  updateBookPrice()
-  deleteBook()
-
-#Apis for Course (CourseController)
-  getAllCourse()
-  addCourse()
-  updateCourse()
-  deleteCourse()
+ #Apis for FoodItem (FoodItemController)
+  getAllFoodItem()
+  addFoodItem()
 
 
-#Apis for Laptop (LaptopController)
-  getAllLaptop()
-  addLaptop()
-  updateLaptop()
-  deleteLaptop()
-
-#Apis for Student (StudentController)
-  getAllStudent()
-  addStudent()
-  updateStudent()
-  deleteStudent()
+#Apis for User (UserController)
+  signUpUser()
+  signInUser()
+  signOutUser()
+  orderFood()
+  cancelorder()
 
 ```
 2. Service 
 
 ```bash
- #Service for Address 
-  getAllAddress()
-  addAddress()
-  updateAddressState()
-  deleteAddress()
-  
+ #Service for Admin 
+  getAllUsers()
+  getAllOrders()
+  getAllFoodItems()
+ 
 
- #Service for Book 
-  getAllBook()
-  addBook()
-  updateBookPrice()
-  deleteBook()
-
-#Service for Course 
-  getAllCourse()
-  addCourse()
-  updateCourse()
-  deleteCourse()
+ #Service for FoodItem 
+  getAllFoodItem()
+  addFoodItem()
 
 
-#Service for Laptop 
-  getAllLaptop()
-  addLaptop()
-  updateLaptop()
-  deleteLaptop()
-
-#Service for Student 
-  getAllStudent()
-  addStudent()
-  updateStudent()
-  deleteStudent()
+#Service for User
+  signUpUser()
+  signInUser()
+  signOutUser()
+  orderFood()
+  cancelorder()
 
 ```
 
 3. Model
 
 ```bash
- Address()
- Book()
-Course()
-Laptop()
-Student()
+ Admin()
+ FoodItem()
+ Order()
+ User()
+ AuthenticationToken()
+ SignUpOutput()
+ SignInInput()
 ```
 4. Repository
 
 ```bash
- IAddressRepo()
- IBookRepo()
- ICourseRepo()
- ILaptopRepo()
- IStudentRepo()
+ IAuthTokenRepo()
+ IFoodItemRepo()
+ IOrderRepo()
+ IUserRepo()
+
 ```
 
 ## Data Structure Used
@@ -108,15 +82,16 @@ Student()
 
 ## Project Summary
 
-Mapping Practice is a Assignment to practice mapping in sprintboot.
+Restaurant Management Service API is a Assignment to practice mapping , APis and SignIn and SignUP users in springboot.
  
   #### Features for Employee
 
-- you can Add/Create Address , Book , Course , Laptop and Student.
-- you can Get all Address , Book , Course , Laptop and Student details.
-- you can Delete/Remove specific Address , Book , Course , Laptop and Student details.
-- you can Update specific Address , Book , Course , Laptop and Student details.
-
+- Create /SignUp user
+- SignIn user(Send token on mail for verification)
+- SignOut user (Delete token)
+- Create Order (Create the order using Foofitem id and user Id )
+- create List of food item
+- create Admin (special email for admin only)
 
   
 ## Authors

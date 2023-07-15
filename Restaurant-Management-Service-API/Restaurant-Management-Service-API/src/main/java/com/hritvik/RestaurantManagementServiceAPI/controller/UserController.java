@@ -66,7 +66,7 @@ public class UserController {
     }
 
     @DeleteMapping("order/cancel")
-    public String  cancelAppointment(String email, String token)
+    public String  cancelOrder(String email, String token)
     {
 
         if(authenticationService.authenticate(email,token)) {
