@@ -14,7 +14,8 @@ public class OrderService {
 
 @Autowired
 IOrderRepo orderRepo;
-    public List<Order> getAllAppointments() {
+
+    public List<Order> getAllOrder() {
         return orderRepo.findAll();
     }
 

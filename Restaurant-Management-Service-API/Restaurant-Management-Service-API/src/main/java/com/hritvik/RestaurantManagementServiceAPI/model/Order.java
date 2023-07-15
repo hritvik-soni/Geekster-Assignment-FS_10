@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -26,7 +27,7 @@ public class Order {
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_foodItem_id")
-    private FoodItem foodItem;
+    private List<FoodItem> foodItem;
 
     private LocalDateTime localDateTime;
 

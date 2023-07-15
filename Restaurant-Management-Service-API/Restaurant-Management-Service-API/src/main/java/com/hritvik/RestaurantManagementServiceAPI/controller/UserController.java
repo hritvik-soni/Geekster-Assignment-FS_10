@@ -51,12 +51,6 @@ public class UserController {
 
     }
 
-    @GetMapping("users")
-    List<User> getAllPatients()
-    {
-        return userService.getAllUser();
-    }
-
     @PostMapping("order/food")
     public String orderFood(@RequestBody Order order, String email, String token)
     {

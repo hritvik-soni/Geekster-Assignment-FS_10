@@ -1,7 +1,7 @@
 package com.hritvik.RestaurantManagementServiceAPI.model;
 
 import jakarta.persistence.*;
-import jakarta.persistence.criteria.Order;
+
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;

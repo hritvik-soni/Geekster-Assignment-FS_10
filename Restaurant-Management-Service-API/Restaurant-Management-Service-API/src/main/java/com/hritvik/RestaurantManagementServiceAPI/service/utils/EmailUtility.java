@@ -8,7 +8,7 @@ import java.util.Properties;
 public class EmailUtility {
 
     private static final String EMAIL_USERNAME ="hritviksoni768@gmail.com";
-    private static final String EMAIL_PASSWORD =""; // Add app Password
+    private static final String EMAIL_PASSWORD ="ilojwpldebesnrcn"; // Add app Password
 
 
     public static void sendEmail(String toEmail, String subject, String body) throws MessagingException {
