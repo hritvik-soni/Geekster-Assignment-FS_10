@@ -1,4 +1,4 @@
-# Restaurant Management Service API
+# Instagram Backend
 
 ## Language and Framwork 
 
@@ -11,54 +11,42 @@
  1. Controller 
 
 ```bash
- #Apis for Admin (AdminController)
-  getAllUsers()
-  getAllOrders()
-  getAllFoodItems()
- 
-
- #Apis for FoodItem (FoodItemController)
-  getAllFoodItem()
-  addFoodItem()
-
+ #Apis for Post (PostController)
+  getPostById()
+  createPost()
 
 #Apis for User (UserController)
   signUpUser()
   signInUser()
   signOutUser()
-  orderFood()
-  cancelorder()
-
 ```
 2. Service 
 
 ```bash
- #Service for Admin 
-  getAllUsers()
-  getAllOrders()
-  getAllFoodItems()
- 
+ #Servicefor Post 
+  getPostById()
+  createPost()
 
- #Service for FoodItem 
-  getAllFoodItem()
-  addFoodItem()
-
-
-#Service for User
+#Service for User 
   signUpUser()
   signInUser()
   signOutUser()
-  orderFood()
-  cancelorder()
 
+#Service for authenticationService
+  authenticate()
+  saveAuthToken()
+  findFirstByUser()
+  removeToken()
+
+#Service for utility
+  EmailUtility()
+  HashingUtility()
 ```
 
 3. Model
 
 ```bash
- Admin()
- FoodItem()
- Order()
+ Post()
  User()
  AuthenticationToken()
  SignUpOutput()
@@ -68,10 +56,8 @@
 
 ```bash
  IAuthTokenRepo()
- IFoodItemRepo()
+ IPostRepo()
  IOrderRepo()
- IUserRepo()
-
 ```
 
 ## Data Structure Used
@@ -82,16 +68,15 @@
 
 ## Project Summary
 
-Restaurant Management Service API is a Assignment to practice mapping , APis and SignIn and SignUP users in springboot.
+Instagram Backend is a Assignment to practice mapping , APis and SignIn and SignUP createPost and get post by id in springboot.
  
   #### Features for Employee
 
 - Create /SignUp user
 - SignIn user(Send token on mail for verification)
 - SignOut user (Delete token)
-- Create Order (Create the order using Foofitem id and user Id )
-- create List of food item
-- create Admin (special email for admin only)
+- Create Post (Create the Post using email and token and post link)
+- Get post by id(get the specific post by providin email, token and post id)
 
   
 ## Authors
