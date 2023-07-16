@@ -7,8 +7,8 @@ import java.util.Properties;
 
 public class EmailUtility {
 
-    private static final String EMAIL_USERNAME ="hritviksoni768@gmail.com"; // email changed after testing
-    private static final String EMAIL_PASSWORD ="rdqgkyqcpjsxwspv"; // app Password changed after testing
+    private static final String EMAIL_USERNAME ="demo@gmail.com"; // email changed after testing
+    private static final String EMAIL_PASSWORD ="@@@@@@@@@@@"; // app Password changed after testing
 
 
     public static void sendEmail(String toEmail, String subject, String body) throws MessagingException {
