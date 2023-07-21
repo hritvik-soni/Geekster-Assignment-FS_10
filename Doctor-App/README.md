@@ -1,4 +1,4 @@
-# Instagram Backend
+# Doctor App
 
 ## Language and Framwork 
 
@@ -11,26 +11,44 @@
  1. Controller 
 
 ```bash
- #Apis for Post (PostController)
-  getPostById()
-  createPost()
+ #Apis for Admin (AdminController)
+  createAdmin()
 
-#Apis for User (UserController)
-  signUpUser()
-  signInUser()
-  signOutUser()
+#Apis for Appointment (AppointmentController)
+  getAllAppointments()
+
+#Apis for Doctor (DoctorController)
+  addDoctor()
+  getAllDoctors()
+   
+#Apis for Patient (PatientController)
+  signUpPatient()
+  signInPatient()
+  signOutPatient()
+  getAllPatients()
+  scheduleAppointment()
+  cancelAppointment()
 ```
 2. Service 
 
 ```bash
- #Servicefor Post 
-  getPostById()
-  createPost()
+#Service for Admin 
+  createAdmin()
 
-#Service for User 
-  signUpUser()
-  signInUser()
-  signOutUser()
+#Service for Appointment 
+  getAllAppointments()
+
+#Apis for Doctor 
+  addDoctor()
+  getAllDoctors()
+   
+#Service for Patient 
+  signUpPatient()
+  signInPatient()
+  signOutPatient()
+  getAllPatients()
+  scheduleAppointment()
+  cancelAppointment()
 
 #Service for authenticationService
   authenticate()
@@ -51,13 +69,21 @@
  AuthenticationToken()
  SignUpOutput()
  SignInInput()
+ Qualification()
+ Specialization()
+ Appointments()
+ Doctor()
+ Patient()
+
 ```
 4. Repository
 
 ```bash
  IAuthTokenRepo()
- IPostRepo()
- IOrderRepo()
+ IAppointmentRepo()
+ IAdminRepo()
+ IDoctorRepo()
+ IPatientRepo()
 ```
 
 ## Data Structure Used
@@ -68,15 +94,16 @@
 
 ## Project Summary
 
-Instagram Backend is a Assignment to practice mapping , APis and SignIn and SignUP createPost and get post by id in springboot.
+Doctor App is a Assignment to practice mapping , APis and SignIn and SignUP Patient and and schedult appointments springboot.
  
   #### Features for Employee
 
-- Create /SignUp user
-- SignIn user(Send token on mail for verification)
-- SignOut user (Delete token)
-- Create Post (Create the Post using email and token and post link)
-- Get post by id(get the specific post by providin email, token and post id)
+- Create /SignUp patient
+- Create /SignUp Doctor
+- SignIn patient (Send token on mail for verification)
+- SignOut patient (Delete token)
+- Create Appointment (Create the Appointment using email and token)
+- Get Appontment by id(get the specific AppontmentS by providin email, token and Appontment id)
 
   
 ## Authors
