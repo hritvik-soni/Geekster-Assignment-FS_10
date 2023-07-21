@@ -11,26 +11,42 @@
  1. Controller 
 
 ```bash
- #Apis for Post (PostController)
-  getPostById()
-  createPost()
+ #Apis for Admin(AdminController)
+  createAdmin()
 
 #Apis for User (UserController)
   signUpUser()
   signInUser()
   signOutUser()
+  createInstaPost()
+  removeInstaPost()
+  addComment()
+  removeInstaComment()
+  addLike()
+  getLikeCountByPost()
+  removeInstaLike()
+  followUser()
+  unFollowUser()
 ```
 2. Service 
 
 ```bash
- #Servicefor Post 
-  getPostById()
-  createPost()
+ #Service for Admin 
+  createAdmin()
 
 #Service for User 
   signUpUser()
   signInUser()
   signOutUser()
+  createInstaPost()
+  removeInstaPost()
+  addComment()
+  removeInstaComment()
+  addLike()
+  getLikeCountByPost()
+  removeInstaLike()
+  followUser()
+  unFollowUser()
 
 #Service for authenticationService
   authenticate()
@@ -46,18 +62,29 @@
 3. Model
 
 ```bash
- Post()
+ Admin()
  User()
  AuthenticationToken()
  SignUpOutput()
  SignInInput()
+ Comment()
+ Follow()
+ Like()
+ post()
+ AccountType()
+ Gender()
+ PostType()
 ```
 4. Repository
 
 ```bash
  IAuthTokenRepo()
  IPostRepo()
- IOrderRepo()
+ ICommentRepo()
+ IFollowRepo()
+ ILikeRepo()
+ IPAdminRepo()
+ IUserRepo()
 ```
 
 ## Data Structure Used
@@ -76,7 +103,9 @@ Instagram Backend is a Assignment to practice mapping , APis and SignIn and Sign
 - SignIn user(Send token on mail for verification)
 - SignOut user (Delete token)
 - Create Post (Create the Post using email and token and post link)
-- Get post by id(get the specific post by providin email, token and post id)
+- Like a Post (like the Post using email and token and post id)
+- Comment Post (comment on the Post using email and token and post id)
+- Follow a user (by user id and email)
 
   
 ## Authors
