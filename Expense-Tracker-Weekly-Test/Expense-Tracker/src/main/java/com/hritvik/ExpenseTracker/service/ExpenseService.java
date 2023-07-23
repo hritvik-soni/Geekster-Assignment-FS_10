@@ -3,8 +3,9 @@ package com.hritvik.ExpenseTracker.service;
 import com.hritvik.ExpenseTracker.model.Expense;
 import com.hritvik.ExpenseTracker.model.User;
 import com.hritvik.ExpenseTracker.model.dto.EmailDetails;
-import com.hritvik.ExpenseTracker.model.dto.ExpenseOutput;
+import com.hritvik.ExpenseTracker.model.dto.ExpenseMultiOutput;
 import com.hritvik.ExpenseTracker.model.dto.ExpenseRequest;
+import com.hritvik.ExpenseTracker.model.dto.ExpenseSingleOutput;
 import com.hritvik.ExpenseTracker.repository.IExpenseRepo;
 import com.hritvik.ExpenseTracker.repository.IUserRepo;
 import com.hritvik.ExpenseTracker.service.utility.EmailService;
@@ -28,8 +29,11 @@ public class ExpenseService {
     @Autowired
     EmailService emailService;
 
+    @Autowired
+    UserService userService;
 
-    public ExpenseOutput createExpense(String email, ExpenseRequest expenseRequest) {
+
+    public ExpenseSingleOutput createExpense(String email, ExpenseRequest expenseRequest) {
 
         User existingUser = iUserRepo.findFirstByUserEmail(email);
 
@@ -44,16 +48,25 @@ public class ExpenseService {
 
         EmailDetails emailDetails = EmailDetails.builder()
                 .recipient(savedExpense.getUser().getUserEmail())
-                .subject("ACCOUNT CREATION")
+                .subject("Expense Update")
                 .messageBody("Congratulations! Your Expense Has been Successfully Created.\nYour Account Details: \n" +
-                        "Account Name: " + savedExpense.getUser().getUserFirstName() + " " + savedExpense.getUser().getUserLastName() + "'n")
+                        "Account Name: " + savedExpense.getUser().getUserFirstName() + " "
+                        + savedExpense.getUser().getUserLastName()
+                        + "\n" + savedExpense )
                 .build();
+
         emailService.sendEmailAlert(emailDetails);
 
+        return ExpenseSingleOutput.builder()
+
+                .expenseStatus(true)
+                .expenseStatusMessage("Your Expense Added Successfully also sent over Mail")
+                .expenseSingle(savedExpense)
+                .build();
     }
 
 
-    public ExpenseOutput generateExpense(String email, String startDate, String endDate) {
+    public ExpenseMultiOutput generateExpense(String email, String startDate, String endDate) {
 
         LocalDate start =LocalDate.parse(startDate, DateTimeFormatter.ISO_DATE);
         LocalDate end =LocalDate.parse(endDate, DateTimeFormatter.ISO_DATE);
@@ -75,7 +88,7 @@ public class ExpenseService {
                 .build();
         emailService.sendEmailAlert(emailDetails);
 
-        return ExpenseOutput.builder()
+        return ExpenseMultiOutput.builder()
                 .expenseStatus(true)
                 .expenseStatusMessage("Your Expense Report is sent Over Mail")
                 .expenseReport(expenseList)
@@ -84,11 +97,36 @@ public class ExpenseService {
     }
 
 
-    public ExpenseOutput generateTotalExpense(String email) {
+    public ExpenseMultiOutput generateMonthlyExpense(String email, String month) {
+
+
+        List<Expense> expenseList = iExpenseRepo.findAll().stream()
+                .filter(expense ->expense.getUser().getUserEmail().equals(email))
+                .filter(expense -> expense.getCreatedAtDate().toString().substring(5,7).equals(month))
+                .toList();
 
         User existingUser = iUserRepo.findFirstByUserEmail(email);
-        Long userId = existingUser.getUserId();
-        Double totalExpense =0.0;
+
+        EmailDetails emailDetails = EmailDetails.builder()
+                .recipient(existingUser.getUserEmail())
+                .subject("Expense Report")
+                .messageBody("Your Account Details: \n" +
+                        "Account Name: " + existingUser.getUserFirstName() + " "
+                        + existingUser.getUserLastName()
+                        + "\n Your Expense Report for month: " + month +"\n"+ expenseList )
+                .build();
+        emailService.sendEmailAlert(emailDetails);
+
+        return ExpenseMultiOutput.builder()
+
+                .expenseStatus(true)
+                .expenseStatusMessage("Your Monthly Expense Report is sent Over Mail")
+                .expenseReport(expenseList)
+
+                .build();
+
+
+
 
 
     }

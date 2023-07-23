@@ -16,5 +16,5 @@ public class ExpenseRequest {
     private String expenseTitle;
     private String expenseDescription;
     private Double expensePrice;
-    private User user;
+
 }

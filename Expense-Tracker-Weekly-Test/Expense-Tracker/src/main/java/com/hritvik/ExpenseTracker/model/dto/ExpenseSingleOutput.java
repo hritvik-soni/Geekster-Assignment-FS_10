@@ -4,16 +4,17 @@ import com.hritvik.ExpenseTracker.model.Expense;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import java.util.List;
 
 @Data
-@AllArgsConstructor
 @Builder
-public class ExpenseOutput {
+@AllArgsConstructor
+@NoArgsConstructor
 
+public class ExpenseSingleOutput {
     private boolean expenseStatus;
     private String expenseStatusMessage;
-    private List<Expense> expenseReport;
-    private Double expenseTotal;
+    private Expense expenseSingle;
 }
+

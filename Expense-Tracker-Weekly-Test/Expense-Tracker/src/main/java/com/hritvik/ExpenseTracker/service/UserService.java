@@ -25,7 +25,7 @@ public class UserService {
 
     public SignUpOutput signUpUser(UserRequest userRequest) throws NoSuchAlgorithmException {
 
-        if (iUserRepo.existsByEmail(userRequest.getUserEmail())) {
+        if (iUserRepo.existsByUserEmail(userRequest.getUserEmail())) {
 
             return SignUpOutput.builder()
                     .signUpStatus(false)
@@ -101,11 +101,11 @@ public class UserService {
 
                 EmailDetails emailDetails = EmailDetails.builder()
                         .recipient(existingUser.getUserEmail())
-                        .subject("ACCOUNT CREATION")
-                        .messageBody("Congratulations! Your Account Has been Successfully Created.\nYour Account Details: \n" +
+                        .subject("Auth Token")
+                        .messageBody("Congratulations! You are Successfully SignIn .\nYour Account Details: \n" +
                                 "Account Name: " + existingUser.getUserFirstName() + " "
                                 + existingUser.getUserLastName()
-                                + "\n Authentication token : \n" + authToken)
+                                + "\n Authentication token : \n" + authToken.getTokenValue())
                         .build();
                 emailService.sendEmailAlert(emailDetails);
 

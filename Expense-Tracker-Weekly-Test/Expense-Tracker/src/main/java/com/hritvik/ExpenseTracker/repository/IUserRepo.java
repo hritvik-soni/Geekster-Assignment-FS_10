@@ -9,7 +9,7 @@ public interface IUserRepo extends JpaRepository<User,Long> {
 
 
 
-     boolean existsByEmail(String userEmail);
+     boolean existsByUserEmail(String userEmail);
 
     User findFirstByUserEmail(String signInEmail);
 }

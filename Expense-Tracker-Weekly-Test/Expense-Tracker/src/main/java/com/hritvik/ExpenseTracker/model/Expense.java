@@ -1,5 +1,6 @@
 package com.hritvik.ExpenseTracker.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -33,6 +34,7 @@ public class Expense {
     @CreationTimestamp
     private LocalTime createdAtTime;
 
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     @ManyToOne
     @JoinColumn(name = "fk_user_id")
     private  User user;
