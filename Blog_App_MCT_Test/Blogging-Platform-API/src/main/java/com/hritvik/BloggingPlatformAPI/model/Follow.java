@@ -1,9 +1,12 @@
 package com.hritvik.BloggingPlatformAPI.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 
@@ -12,6 +15,7 @@ import java.time.LocalDateTime;
 @Data
 @Entity
 @Table(name = "follows")
+@Builder
 public class Follow {
 
     @Id
@@ -27,8 +31,9 @@ public class Follow {
     @JoinColumn(name = "following_id", nullable = false)
     private User followingId;
 
-    @Column(nullable = false)
-    private LocalDateTime createdAt = LocalDateTime.now();
+    @CreationTimestamp
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+    private LocalDateTime createdAt;
 
 
 

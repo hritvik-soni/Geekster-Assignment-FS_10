@@ -1,9 +1,13 @@
 package com.hritvik.BloggingPlatformAPI.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 
@@ -12,6 +16,7 @@ import java.time.LocalDateTime;
 @Data
 @Entity
 @Table(name = "comments")
+@Builder
 public class Comment {
 
 
@@ -27,14 +32,15 @@ public class Comment {
     @JoinColumn(name = "post_id", nullable = false)
     private Post post;
 
-    @Column(nullable = false)
+    @CreationTimestamp
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private LocalDateTime createdAt = LocalDateTime.now();
 
+    @UpdateTimestamp
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+    private LocalDateTime updatedAt;
 
-    @Column(nullable = false)
-    private LocalDateTime updatedAt = LocalDateTime.now();
-
-    @Column(name = "comment_body")
+    @Column(name = "comment_body",nullable = false)
     private String commentBody;
 
 

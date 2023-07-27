@@ -298,16 +298,16 @@ public class UserService {
     public String unFollowUser(Integer followId, String followerEmail) {
 
         Follow follow  = followService.findFollow(followId);
-        if(follow != null)
-        {
-            if(authorizeUnfollow(followerEmail,follow))
-            {
-                followService.unfollow(follow);
-                return follow.getCurrentUser().getUserHandle() + "not followed by " + followerEmail;
-            }
-            else
-            {
-                return "Unauthorized unfollow detected...Not allowed!!!!";
+                if(follow != null)
+                {
+                    if(authorizeUnfollow(followerEmail,follow))
+                    {
+                        followService.unfollow(follow);
+                        return follow.getCurrentUser().getUserHandle() + "not followed by " + followerEmail;
+                    }
+                    else
+                    {
+                        return "Unauthorized unfollow detected...Not allowed!!!!";
             }
 
         }
