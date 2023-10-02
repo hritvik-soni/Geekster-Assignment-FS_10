@@ -1,13 +1,13 @@
-package com.hritvik.DoctorSuggestionApi;
+package com.hritvik.SpringBootTechnicalAssignment;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DoctorSuggestionApiApplication {
+public class SpringBootTechnicalAssignmentApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DoctorSuggestionApiApplication.class, args);
+		SpringApplication.run(SpringBootTechnicalAssignmentApplication.class, args);
 	}
 
 }
