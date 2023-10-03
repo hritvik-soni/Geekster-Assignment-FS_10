@@ -1,6 +1,7 @@
 package com.hritvik.SpringBootTechnicalAssignment.controller;
 
 import com.hritvik.SpringBootTechnicalAssignment.model.Doctor;
+import com.hritvik.SpringBootTechnicalAssignment.model.enums.Speciality;
 import com.hritvik.SpringBootTechnicalAssignment.service.DoctorSuggestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,4 +22,10 @@ public class DoctorSuggestionController {
     public List<String> getDoctorList(@RequestParam("id") Integer patientId){
         return service.getDoctorList(patientId);
     }
+
+    @GetMapping("/find")
+    public List<Doctor> getDoctorListBySpeciality(@RequestParam Speciality speciality){
+        return service.getDoctorListBySpeciality(speciality);
+    }
+
 }
