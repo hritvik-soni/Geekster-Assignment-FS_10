@@ -21,9 +21,9 @@ public class RoomController {
         return roomService.getAllRooms();
     }
     @GetMapping("rooms/search/{roomID}")
-    public HotelRoom getRoomById(@PathVariable Long roomId)
+    public HotelRoom getRoomById(@PathVariable Long roomID)
     {
-        return roomService.getAllRoomsById(roomId);
+        return roomService.getAllRoomsById(roomID);
     }
 
 
